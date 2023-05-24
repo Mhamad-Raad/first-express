@@ -24,6 +24,8 @@ app.use((req, res, next) => {
   console.log('request recieved');
 });
 
+app.use(express.json());
+
 app.get('/friends', (req, res) => {
   res.json(friends);
 });
@@ -37,6 +39,24 @@ app.get('/friends/:friendId', (req, res) => {
     res.status(404).send({
       error: 'Friend does not exist',
     });
+});
+
+app.post('/friends', (req, res) => {
+  console.log(req.body.name);
+  if (!req.body.name) {
+    res.status(400).send({
+      error: 'Friend must have a name',
+    });
+  }
+
+  const newFriend = {
+    name: req.body.name,
+    id: friends.length,
+  };
+
+  friends.push(newFriend);
+
+  res.json(newFriend);
 });
 
 app.listen(PORT, () => {
