@@ -44,7 +44,7 @@ app.get('/friends/:friendId', (req, res) => {
 app.post('/friends', (req, res) => {
   console.log(req.body.name);
   if (!req.body.name) {
-    res.status(400).send({
+    return res.status(400).send({
       error: 'Friend must have a name',
     });
   }
