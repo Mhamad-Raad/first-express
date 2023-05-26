@@ -6,7 +6,7 @@ const express = require('express');
 
 
 //using node as a serve
-// we can use html templatings with this as well
+// we can use html templatings with this as well, keeping in mind the file extension should be the same
 //also use mvc structure
 // make a folder public for your html and css
 // app.use('route here /site', express.static('public'));
