@@ -4,6 +4,13 @@ const express = require('express');
 // const path = require('path');
 // res.sendFile(path.join(__dirname, '..', 'somwhere', 'somewhere'));
 
+
+//using node as a serve
+// we can use html templatings with this as well
+//also use mvc structure
+// make a folder public for your html and css
+// app.use('route here /site', express.static('public'));
+
 const friendsController = require('../controllers/friends.controller');
 
 const friendsRouter = express.Router();
