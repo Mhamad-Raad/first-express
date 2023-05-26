@@ -1,5 +1,9 @@
 const express = require('express');
 
+//send files
+// const path = require('path');
+// res.sendFile(path.join(__dirname, '..', 'somwhere', 'somewhere'));
+
 const friendsController = require('../controllers/friends.controller');
 
 const friendsRouter = express.Router();
